@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<title>Kidnapper</title>
+	<script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<audio id = "flash">
+		<source src="flashlight.mp3" type="audio/mpeg">
+	</audio>
+	<!-- <audio id = "themesong">
+		<source src="audio/part1/themesong.mp3" type="audio/mpeg">
+	</audio> -->
+	<audio id="start">
+		<source id="nameoftheuser" src="audio/part1/Alex.mp3" type="audio/mpeg">
+	</audio>
+	<audio id = "question1pause">
+		<source src="audio/part2/q1_pause.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="question1yes">
+		<source src="audio/part2/q1_yes.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="question1no">
+		<source src="audio/part2/q1_no.mp3" type="audio/mpeg">
+	</audio>
+	<audio id = "question2pause">
+		<source src="audio/part3/q2_pause.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="question2yes">
+		<source src="audio/part3/q2_yes.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="question2no">
+		<source src="audio/part3/q2_no.mp3" type="audio/mpeg">
+	</audio>
+	<audio id = "question3pause">
+		<source src="audio/part4/q3_pause.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="question3yes">
+		<source src="audio/part4/q3_yes.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="question3no">
+		<source src="audio/part4/q3_no.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="escaped">
+		<source src="audio/part5/right_sequence.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="dead">
+		<source src="audio/part5/wrong_sequence.mp3" type="audio/mpeg">
+	</audio>
+	
+	<section class="title">
+		<h1>Kidnapper</h1>
+		<h3 style="color: white">To use the flashlight tap anywhere on the screen</h3>
+		<input class = "user" type="text" name="user" placeholder="Write your name">
+	</section>
+
+	<section class="headphones">
+		<img src="headphones.jpg">
+	</section>
+
+	<section class="start" onclick="blink()">
+		<img class="shelf" src="shelf.jpg">
+	</section>
+
+	<script src="script.js"> </script>
+</body>
