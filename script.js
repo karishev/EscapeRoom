@@ -23,11 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			nameoftheuser = useranswer.value;
 
 			if (names.indexOf(nameoftheuser) == -1 && names2.indexOf(nameoftheuser) == -1) {
-				nameoftheusergiven.src = "soundwork/mp3/Alex.mp3";
-				startingpoint.src = "soundwork/mp3/Alex.mp3";
+				nameoftheusergiven.src = "audio/part1/Alex.mp3";
+				startingpoint.src = "audio/part1/Alex.mp3";
 			}
 			else {
-				nameoftheusergiven.src = "soundwork/mp3/" + names[names.indexOf(nameoftheuser)] + "mp3";
+				nameoftheusergiven.src = "audio/part1/" + names[names.indexOf(nameoftheuser)] + ".mp3";
+				startingpoint.src = "audio/part1/" + names[names.indexOf(nameoftheuser)] + ".mp3";
+				console.log("audio/part1/" + names[names.indexOf(nameoftheuser)] + ".mp3");
 				// startingaudio = names[names.indexOf(nameoftheuser)];
 			}
 			title.style.cursor = "none";
