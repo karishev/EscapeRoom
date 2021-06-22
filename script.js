@@ -26,11 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				nameoftheusergiven.src = "audio/part1/Alex.mp3";
 				startingpoint.src = "audio/part1/Alex.mp3";
 			}
-			else {
+			else if (names.indexOf(nameoftheuser) != -1) {
 				nameoftheusergiven.src = "audio/part1/" + names[names.indexOf(nameoftheuser)] + ".mp3";
 				startingpoint.src = "audio/part1/" + names[names.indexOf(nameoftheuser)] + ".mp3";
 				console.log("audio/part1/" + names[names.indexOf(nameoftheuser)] + ".mp3");
 				// startingaudio = names[names.indexOf(nameoftheuser)];
+			}
+
+			else if(names2.indexOf(nameoftheuser) != -1) {
+				let index = names2.indexOf(nameoftheuser);
+				nameoftheusergiven.src = "audio/part1/" + names[index] + ".mp3";
+				startingpoint.src = "audio/part1/" + names[index] + ".mp3";
 			}
 			title.style.cursor = "none";
 			title.classList.add('fadeout');
@@ -41,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			enableScroll();
 			setTimeout(() => {
 				title.remove();
-				// themesong.volume = 0;
-				
 			}, 4000);
 			
 			setTimeout(() => {
@@ -78,11 +82,16 @@ let q3_pause = document.getElementById('question3pause')
 
 let win = document.getElementById('escaped');
 let lose = document.getElementById('dead');
+
+let winscreen = document.getElementById('win');
+let losescreen = document.getElementById('lose');
+
 startingpoint.addEventListener('timeupdate', () => {
 	
 	if (startingpoint.ended) {
 		console.log('question1');
 		q1_pause.play();
+		
 		if (numofclicks%2 == 1) blink();
 		now = numofclicks;
 	}
@@ -185,6 +194,37 @@ question3yes.addEventListener('timeupdate', () =>  {
 question3no.addEventListener('timeupdate', () => {
 	if (question3no.ended) {
 		lose.play();
+	}
+})
+
+let doit1 = 0;
+let doit2 = 0;
+win.addEventListener('timeupdate', () => {
+	if (win.currentTime > 30 && doit1 == 0) {
+		document.querySelector('.start').remove();
+		flash.remove();
+		document.body.style.cursor = "none";
+		doit1 = 1;
+		
+	}
+	if (win.ended) {
+		winscreen.style.opacity = "100%";
+		document.getElementById('win').classList.add('fadein');
+		winscreen.style.cursor = "default";
+	}
+})
+
+lose.addEventListener('timeupdate', () => {
+	if(lose.currentTime > 25 && doit2 == 0) {
+		flash.remove();
+		document.querySelector('.start').remove();
+		document.body.style.cursor = "none";
+		doit2 = 1;
+	}
+	if (lose.ended) {
+		losescreen.style.opacity = "100%";
+		document.getElementById('lose').classList.add('fadein');
+		losescreen.style.cursor = "default";
 	}
 })
 

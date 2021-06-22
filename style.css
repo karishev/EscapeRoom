@@ -7,6 +7,7 @@ body {
 
 }
 .title {
+	padding-bottom: 200px;
 	background: black;
 	width: 100%;
 	height: 100vh;
@@ -20,7 +21,7 @@ body {
 	z-index: 20;
 }
 
-.title h1{
+/*.title h1{
 	font-size: 8em;
 	color: white;
 }
@@ -28,13 +29,49 @@ body {
 .title p {
 	font-size: 1.2em;
 	color: white;
-}
+}*/
 
 .title input {
+	margin-bottom: 50px;
 	font-size: 1.5em;
 	text-align: center;
 	background-color: black;
 	color: white;
+}
+.title h1{
+	font-size: 8em;
+	font-family: 'Special Elite', cursive;
+	color: white;
+	opacity: 80%;
+}
+.title h2{
+	
+	font-size: 4em;
+	font-family: 'Special Elite', cursive;
+	opacity: 40%;
+	color: #fff;
+	overflow: hidden; /* content not revealed until the animation */
+	border-right: .15em solid #DA0037; /* cursor */
+	white-space: nowrap; /* keep content on a single line */
+	margin: 0 auto; /* scrolling effect */
+	margin-top: -100px;
+	margin-bottom: 100px;
+	letter-spacing: .05em; 
+	animation: 
+		typing 4s steps(30, end),
+		blinking 0.5s step-end infinite;
+}
+
+/* typing effect */
+@keyframes typing {
+	from { width: 0 }
+	to { width: 38% }
+}
+
+/* typewriter cursor effect */
+@keyframes blinking {
+	from, to { border-color: transparent }
+	50% { border-color: #DA0037 }
 }
 
 .fadeout {
@@ -44,10 +81,6 @@ body {
 	opacity: 100%;
 }
 
-#themesong {
-	transition: all 2s ease;
-}
-
 .headphones {
 	background: black;
 	text-align: center;
@@ -55,12 +88,16 @@ body {
 	align-items: center;
 	justify-content: center;
 	width: 100vw;
-	height: 110vh;
+	height: 100vh;
 	opacity: 100%;
 	transition: all 4s ease;
-	/*position: fixed;*/
 }
 
+.headph {
+	/*margin-top: 100%;*/
+	width: 100%;
+	height: 100%;
+}
 
 .shelf {
 	width: 100vw;
@@ -73,12 +110,11 @@ body {
 	cursor: none;
 	--cursorX: 50vw;
 	--cursorY: 50vh;
-
-}
-.start {
 	background: black;
 	transition: all 2s ease;
+
 }
+
 
 .start::before {
 	content: '';
@@ -86,11 +122,36 @@ body {
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	/*pointer-events: none;*/
 	background: radial-gradient(
 		circle 10vmax at var(--cursorX) var(--cursorY),
 		rgba(0,0,0,0) 0%,
 		rgba(0,0,0,.5) 80%,
 		rgba(0,0,0,.95) 100%
 	)
+}
+
+#win {
+	padding-bottom: 200px;
+	background: black;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 2s ease;
+	opacity: 0;
+	z-index: 20;
+}
+#lose {
+	padding-bottom: 200px;
+	background: black;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	display: none;
+	transition: all 2s ease;
+	opacity: 1;
+	z-index: 20;
 }

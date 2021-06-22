@@ -5,8 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 	<title>Kidnapper</title>
 	<script src="jquery-3.6.0.min.js"></script>
 </head>
@@ -15,9 +18,6 @@
 	<audio id = "flash">
 		<source src="flashlight.mp3" type="audio/mpeg">
 	</audio>
-	<!-- <audio id = "themesong">
-		<source src="audio/part1/themesong.mp3" type="audio/mpeg">
-	</audio> -->
 	<audio id="start">
 		<source id="nameoftheuser" src="audio/part1/Alex.mp3" type="audio/mpeg">
 	</audio>
@@ -56,17 +56,24 @@
 	</audio>
 	
 	<section class="title">
-		<h1>Kidnapper</h1>
-		<h3 style="color: white">To use the flashlight tap anywhere on the screen</h3>
-		<input class = "user" type="text" name="user" placeholder="Write your name">
-	</section>
+        <h1>KIDNAPPER</h1>
+        <h2>can you escape?</h2>
+        <input class = "user" type="text" name="user" placeholder="Write your name">
+    </section>
 
-	<section class="headphones">
-		<img src="headphones.jpg">
+	<section class="headphones" >
+		<img src="headphones.jpg" class="headph">
 	</section>
 
 	<section class="start" onclick="blink()">
 		<img class="shelf" src="shelf.jpg">
+	</section>
+
+	<section id="win">
+		<img src="winscreen.png">
+	</section>
+	<section id="lose">
+		<img src="losescreen.png">
 	</section>
 
 	<script src="script.js"> </script>
