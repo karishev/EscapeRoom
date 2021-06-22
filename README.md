@@ -1,5 +1,9 @@
 Project Name: Escape Room
 
+Group Members:
+Fatema Nassar
+Adina Maratkyzy
+Shyngys Karishev
 
 Project Description: 
 
