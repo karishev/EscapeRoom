@@ -1,4 +1,4 @@
-Project Name: Escape Room
+# Escape Room
 
 ### Group Members
 
